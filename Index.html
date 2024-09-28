@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plataforma para reportar problemas en Ahualulco.">
+    <meta name="keywords" content="ahualulco, reportes, ciudadanía digital">
+    <title>GOBIERNO - Ciudadanía Digital</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- CDN de Font Awesome -->
+</head>
+
+<body>
+
+    <header>
+        <h4 class="header-title">Reporte Ciudadano Ahualulco</h4>
+    </header>
+
+    <div class="container">
+        <div class="left-section">
+            <h1>¿Qué es Reporte Ciudadano Ahualulco?</h1>
+            <hr style="border: 2px solid rgb(241, 79, 4); margin: 10px 0;">
+            <p class="text-justify mb-3" style="padding-left: 25px;">Reporte Ciudadano Ahualulco es una plataforma o
+                servicio que permite a los ciudadanos del municipio de Ahualulco reportar problemas, sugerencias o
+                necesidades que afectan a su comunidad, como baches, alumbrado público dañado, recolección de basura y
+                otros asuntos relacionados con la infraestructura o los servicios públicos.</p>
+            <div class="slogan">
+                <h2>Hagamos<br><span class="highlight">Nuestro</span><br>el Futuro</h2>
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="login-box">
+                <img src="imgs/logo.png" alt="TLQ ID Logo" class="logo">
+                <h3>CIUDADANÍA DIGITAL</h3>
+
+                <!-- Tabs -->
+                <div class="tab">
+                    <button class="tab-button active" onclick="showForm('login')">Iniciar Sesión</button>
+                    <button class="tab-button" onclick="showForm('register')">¡Regístrate!</button>
+                </div>
+
+                <!-- Form Login -->
+                <div id="login" class="form active">
+                    <form action="php/login.php" method="POST">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                        <button type="submit">INICIAR SESIÓN</button>
+                    </form>
+                </div>
+
+                <!-- Form Register -->
+                <div id="register" class="form">
+                    <form id="registrationForm" method="POST">
+                        <label for="reg-email">Correo electrónico</label>
+                        <input type="email" id="reg-email" name="reg-email" placeholder="Correo electrónico" required>
+                        <label for="reg-password">Contraseña</label>
+                        <input type="password" id="reg-password" name="reg-password" placeholder="Contraseña" required>
+                        <button type="submit">REGISTRARSE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Modal -->
+<div class="modal" tabindex="-1" role="dialog" id="alertModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">A L E R T A</h6>
+                </div>
+            <div class="modal-body">
+               <p id="modalMessage">Texto del mensaje aquí.</p>
+            </div>
+            <div class="modal-footer text-center"> <!-- Alineación centrada -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <footer>
+        <p>&copy; 2024 GOBIERNO - Ciudadanía Digital. Todos los derechos reservados.</p>
+        <p>Contacto: info@ahualulcodemercado.gob.mx</p>
+        <p>Síguenos en nuestras redes sociales.</p>
+        <a href="#" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+    </footer>
+
+    <script>
+        function showForm(formName) {
+            // Ocultar todos los formularios
+            const forms = document.querySelectorAll('.form');
+            forms.forEach(form => {
+                form.classList.remove('active');
+            });
+
+            // Mostrar el formulario seleccionado
+            const selectedForm = document.getElementById(formName);
+            selectedForm.classList.add('active');
+
+            // Actualizar el estado de los botones de pestañas
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            document.querySelector(`.tab-button[onclick="showForm('${formName}')"]`).classList.add('active');
+        }
+
+        function showModal(message) {
+            document.getElementById("modalMessage").textContent = message;
+            document.getElementById("alertModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("alertModal").style.display = "none";
+        }
+
+        // Manejar el envío del formulario de registro
+        document.getElementById("registrationForm").onsubmit = function (event) {
+            event.preventDefault(); // Prevenir el envío del formulario
+
+            const formData = new FormData(this);
+
+            fetch("php/register.php", {
+                method: "POST",
+                body: formData,
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === "success") {
+                        showModal(data.message); // Mostrar mensaje de éxito
+                    } else {
+                        showModal(data.message); // Mostrar mensaje de error
+                    }
+                })
+                .catch(error => {
+                    showModal("Error al registrar: " + error.message);
+                });
+        };
+    </script>
+</body>
+
+</html>

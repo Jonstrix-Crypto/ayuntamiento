@@ -1,0 +1,48 @@
+<?php
+// reg_user.php
+
+// Conexión a la base de datos
+$servername = "localhost"; 
+$username = "root"; 
+$password = "Master22!";
+$dbname = "ciudadania_digital";
+
+// Crear conexión
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Comprobar la conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+// Obtener datos del formulario
+$email = $_POST['reg-email'] ?? '';
+$password = $_POST['reg-password'] ?? '';
+
+// Verificar si el correo ya existe
+$checkEmailStmt = $conn->prepare("SELECT * FROM usuarios WHERE email = ?");
+$checkEmailStmt->bind_param("s", $email);
+$checkEmailStmt->execute();
+$result = $checkEmailStmt->get_result();
+
+if ($result->num_rows > 0) {
+    echo json_encode(["status" => "error", "message" => "Error: La dirección de correo ya existe."]);
+} else {
+    // Preparar y vincular la inserción, asignando el rol 'user' por defecto
+    $stmt = $conn->prepare("INSERT INTO usuarios (email, password, user) VALUES (?, ?, 'user')"); // 'user' es el rol por defecto
+    $stmt->bind_param("ss", $email, $password); // Usa el password sin hashear
+
+    // Ejecutar la consulta
+    if ($stmt->execute()) {
+        echo json_encode(["status" => "success", "message" => "Registro exitoso."]);
+    } else {
+        echo json_encode(["status" => "error", "message" => "Error al registrar el usuario: " . $stmt->error]);
+    }
+}
+
+// Cerrar la conexión
+$stmt->close();
+$checkEmailStmt->close();
+$conn->close();
+?>
+

@@ -1,0 +1,599 @@
+/* Estilos básicos */ 
+.header-title {
+    text-align: center; /* Centrar el texto */
+    font-size: 40px; /* Tamaño de fuente */
+    color: #e25707; /* Color del texto */
+    margin-bottom: 20px; /* Espacio inferior al título */
+    margin-top: auto;        
+}
+
+
+body {
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    background-image: url(../imgs/fondo.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe todo el alto de la ventana */
+    padding-right: 40px;
+}
+
+.underline {
+    border-bottom: 2px solid orange; 
+    padding-bottom: 10px; /* Espacio entre el texto y la línea */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1; /* Permite que la sección del contenedor ocupe el espacio restante */
+    padding: 20px;
+    padding-bottom: 10px; /* Añade espacio inferior para el footer */
+}
+
+.left-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.left-section h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+.left-section p {
+    font-size: 18px;
+    margin: 20px 0;
+    color: #555;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cta-button {
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+.slogan {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.slogan h2 {
+    font-size: 30px;
+    color: #333;
+    line-height: 1.2;
+}
+
+.highlight {
+    color: #FF5733; /* Color destacado */
+}
+
+
+
+
+.right-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px; /* Ancho fijo para el cuadro de inicio de sesión */
+}
+
+.login-box .logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.login-box h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-box input {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #0e0d0d;
+}
+
+.login-box button {
+    background-color: #ce5729;
+    color: rgb(238, 237, 241);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-box button:hover {
+    background-color: #dd6509;
+}
+
+.additional-links {
+    margin-top: 20px;
+}
+
+.link-button {
+    background-color: #007BFF; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    font-size: 14px; /* Tamaño de la fuente */
+    margin-top: 10px; /* Espacio entre los botones */
+    display: block; /* Los botones ocupan toda la línea */
+    width: 100%; /* Ancho completo */
+}
+
+.link-button:hover {
+    background-color: #0056b3; /* Color al pasar el mouse */
+}
+
+.text-justify {
+    text-align: justify; /* Justifica el texto */
+}
+
+.mb-3 {
+    margin-bottom: 1rem; /* Espaciado inferior */
+    
+}
+
+header {
+    background: #35424a;
+    color: white;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid;
+    position: absolute;
+    width: 100%;
+    }
+
+   #welcome-header {
+        display: flex; /* Usar flexbox */
+        justify-content: space-between; /* Espacio entre el título y el enlace */
+        align-items: center; /* Centrar verticalmente */
+        padding: 10px 20px; /* Espaciado interno */
+        margin-left: 20px; /* Espaci
+   }
+
+   #welcome-header h1 {
+    color: rgb(238, 113, 10); /* Cambia el color del texto "Bienvenido" a blanco */
+}
+    
+    .logout-link {
+        margin-left: auto; /* Empujar el enlace a la derecha */
+        color: white; /* Cambia el color del enlace de cerrar sesión a blanco */
+        text-decoration: none; /* Opcional: elimina el subrayado */
+    }
+
+    .user-text {
+        color: white; /* Cambia el color del texto del usuario a blanco */
+    }
+
+    .logout-link:hover {
+        text-decoration: underline; /* Opcional: agrega un subrayado al pasar el mouse */
+    }
+    
+
+
+    #welcome-header {
+        position: relative; /* Cambia a relativo solo en la página de bienvenida */
+        bottom: 0; /* Ajusta si es necesario */
+        width: 100%; /* Asegura que ocupe todo el ancho */
+
+    }
+
+
+    /********pies de paginas****************/
+footer {
+    background-color: rgba(0, 0, 0, 0.7); /* Color de fondo del pie de página */
+    color: white; /* Color del texto del pie de página */
+    text-align: center; /* Centra el texto en el pie de página */
+    padding: 20px; /* Espaciado interno */
+    position: absolute; /* Permite que el pie de página se posicione correctamente */
+    bottom: 0; /* Asegura que esté al final de la página */
+    width: 100%; /* Asegura que ocupe todo el ancho de la página */
+}
+
+#welcome-footer {
+    position: relative; /* Cambia a relativo solo en la página de bienvenida */
+    bottom: 0; /* Ajusta si es necesario */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    margin: 0 10px;
+    margin-bottom: 20px;
+}
+
+.social-icon {
+    color: white; /* Color de los íconos */
+    margin: 0 10px; /* Espaciado entre íconos */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.social-icon:hover {
+    color: orange; /* Cambia el color al pasar el ratón */
+}
+
+/* Estilos de pestañas */
+.tab {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.form {
+    display: none;
+}
+
+.form.active {
+    display: block;
+}
+
+.tab-button {
+    background-color: #007BFF; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    font-size: 14px; /* Tamaño de la fuente */
+    margin-top: 10px; /* Espacio entre los botones */
+    display: inline-block; /* Los botones en línea */
+}
+
+.tab-button.active {
+    background-color: #0056b3; /* Color para el botón activo */
+}
+
+
+/********************************/
+
+/* Estilos básicos */
+
+.left-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.left-section h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+.left-section p {
+    font-size: 18px;
+    margin: 20px 0;
+    color: #555;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px; /* Ajusta el ancho según sea necesario */
+}
+
+/******Pestañas****************/
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+
+.tab {
+    display: flex;
+    justify-content: space-between; /* Centrar las pestañas */
+    padding: 0;
+    margin: 0; /* Asegúrate de eliminar cualquier margen en el contenedor de pestañas */
+}
+
+.tab-button {
+    flex: 1; /* Hacer que todos los botones tengan el mismo tamaño */
+    padding: 10px; /* Espaciado interno */
+    border: none;
+    cursor: pointer;
+    background-color: #f1f1f1; /* Color de fondo */
+    transition: background-color 0.3s;
+    margin: 0;
+}
+
+.tab-button.active {
+    border-bottom: 2px solid #f14f04; /* Resalta la pestaña activa */
+}
+
+.tab-button:hover {
+    background-color: #0056b3;
+}
+
+
+button {
+    margin: 0;
+    padding: 0;
+}
+
+/*********formulario****************/
+.form {
+    display: none;
+}
+
+.form.active {
+    display: block;
+}
+
+.login-box label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.login-box input {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: calc(100% - 20px); /* Full width minus padding */
+}
+
+.login-box button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.login-box button:hover {
+    background-color: #8a4c05;
+}
+
+/******************************** estilos modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fijo en la pantalla */
+    z-index: 1000; /* En frente de todo */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    overflow: auto; /* Desplazamiento si es necesario */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con opacidad (ajusta el último valor) */
+}
+
+.modal-content {
+    background-color: rgba(90, 88, 88, 0.9); /* Color de fondo del contenido con opacidad */
+    margin: 10% auto; /* Espacio desde la parte superior y centrado */
+    padding: 30px; /* Espaciado interno alrededor del contenido */
+    border: 1px solid #888; /* Borde gris claro */
+    width: 20%; /* Ajusta el ancho del modal según sea necesario */
+    max-width: 600px; /* Establece un ancho máximo */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+.modal-content p {
+    color: #ffffff; /* Color del texto */
+    font-size: 16px; /* Tamaño de fuente legible */
+    margin-bottom: 10px;
+    text-align: center; /* Centra el texto */
+    padding-bottom: 10px; /* Espaciado inferior al texto */
+    border-bottom: 1px solid #ddd; /* Borde gris claro */
+    padding-top: 10px; /* Espaciado superior al texto */
+    padding-bottom: 10px; /* Espaciado inferior al texto */
+
+}
+
+
+.close {
+    color: #aaa; /* Color del botón de cerrar */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Color al pasar el ratón sobre el botón de cerrar */
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-footer {
+    display: flex; /* Utiliza flexbox para el diseño */
+    justify-content: center; /* Centra el contenido del footer */
+    width: 100%; /* Asegúrate de que ocupe todo el ancho */
+}
+
+.modal-header {
+    display: flex; /* Utiliza flexbox para el diseño */
+    justify-content: center; /* Centra el contenido del header */
+    align-items: center; /* Alinea verticalmente los elementos en el centro */
+    width: 100%; /* Asegúrate de que ocupe todo el ancho */
+}
+
+.modal-title{
+    font-size: 20px; /* Tamaño de fuente para el título */
+    color: #f30909; /* Color del texto del título */
+    margin-bottom: 10px; /* Espacio inferior al título */
+}
+
+/******* Formulario reporte *******/
+
+/* Estilos específicos para el formulario de reporte */
+
+
+.bottom-section {
+    margin: 20px;
+    margin-left: 80px;
+    margin-right: 80px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+.bottom-section h2 {
+    margin-bottom: 15px;
+    color: #333; /* Color del título del formulario */
+}
+
+.bottom-section label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333; /* Color de las etiquetas */
+}
+
+.bottom-section input,
+.bottom-section select,
+.bottom-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+/* Opcional: Estilo para cuando el botón es presionado */
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+.bottom-section input[type="submit"] {
+    background: #35424a; /* Color del botón */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: background 0.3s; /* Transición suave al cambiar el fondo */
+    width: 150px; /* Establece el ancho del botón */
+    margin: 20px auto; /* Centra el botón horizontalmente */
+    display: block; /* Asegura que el botón se comporte como un bloque */
+}
+
+.bottom-section input[type="submit"]:hover {
+    background: #e8491d; /* Color al pasar el mouse */
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px; /* Espacio entre filas */
+}
+
+.row div {
+    flex: 1;
+    margin-right: 10px; /* Espacio entre columnas */
+}
+
+.row div:last-child {
+    margin-right: 0; /* Eliminar margen derecho en el último elemento */
+}
+
+/******** tabla de reportes ********/
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #374151;
+    margin-left: 20px;
+    margin-right: 40px;
+}
+th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #4b5563;
+    text-align: center
+}
+th {
+    background-color: #4b4b63;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    text-align: center;
+}
+tr:hover {
+    background-color: #4b5563;
+}
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 40px;
+    padding: 10px;
+    background-color: #374151;
+    margin-bottom: 40px;
+}
+.pagination select, .pagination button {
+    background-color: #4b5563;
+    color: #e5e7eb;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.pagination button:hover {
+    background-color: #6b7280;
+}
+
+/******Espacios despues del titulo****************/
+
+.Text {
+    margin-bottom: 20px;
+}
